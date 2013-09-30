@@ -1,0 +1,33 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+
+
+# Compiled
+target/
+test-output/
+
+# Eclipse
+.classpath
+.classpath.orig
+.project
+.settings
+.metadata
+
+# IDEA
+.idea
+*.iml
+
+# Maven
+.m2
+.repository
+
+# Checkstyle
+.checkstyle
+
+# misc
+*.orig

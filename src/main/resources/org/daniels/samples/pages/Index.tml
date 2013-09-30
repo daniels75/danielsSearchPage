@@ -1,0 +1,32 @@
+<html t:type="layout" title="Search site"
+      t:pageTitle="Index page"
+      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+      xmlns:p="tapestry:parameter">
+     
+    <p>
+    <form t:type="form" t:id="searchForm" autofocus="false" class="form-search">
+    <div id="search" class="input-append">
+        <input t:type="textfield" t:validate="required, regexp=^((http://|https://|www).*?)"  size="30" name="searchQuery" t:id="searchQuery" placeholder="${message:search.enterTerms}" class="input-xlarge search-query"/>
+  		<input t:type="TextField" t:id="urlCount" t:validate="regexp=^[0-9].*" size="10" class="input-mini"/>
+        <button type="submit" class="btn"><i class="icon-search"></i> ${message:button.search}</button>
+        
+    </div>
+    
+        <a t:type="eventlink" disabled="false" event="delete" id="delete" class="btn btn-primary"><i class="icon-trash icon-white"></i> ${message:button.removeAll}</a>
+      
+    </form>    
+    </p>
+
+
+	    
+	    
+	<table t:type="grid" source="pages" row="currentURL">
+	        <p:urlcell>
+            <a href="${currentURL.url}" t:type="any">
+                ${currentURL.url}
+            </a>
+        </p:urlcell>
+	</table>
+
+
+</html>
