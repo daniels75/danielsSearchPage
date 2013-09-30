@@ -132,19 +132,19 @@ public class UrlSearcher {
 		return linkList;
 	}
 
-	private String retrievePageContent(URL pageURL) throws Exception{
-		final StringBuilder stringBuilder = new StringBuilder();
+	private String retrievePageContent(URL url) throws Exception{
+		StringBuilder stringBuilder = new StringBuilder();
 		try {
-			final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(
-					pageURL.openStream()));
-			String readLine;
-			while ((readLine = bufferedReader.readLine()) != null) {
-				stringBuilder.append(readLine);
+			BufferedReader in = new BufferedReader(new InputStreamReader(
+					url.openStream()));
+			String inputLine;
+			while ((inputLine = in.readLine()) != null) {
+				stringBuilder.append(inputLine);
 			}
-			bufferedReader.close();
+			in.close();
 		} catch (IOException e) {
 			throw new Exception("An error occured while atempt to retrieve content from "
-					+ pageURL);
+					+ url);
 			
 		}
 		return stringBuilder.toString();

@@ -34,11 +34,22 @@ public class Index {
 	private SimpleURL currentURL;
 
 	@Property
-	@Persist(PersistenceConstants.FLASH)
+	@Persist
 	private String searchQuery;
+	
+	@Property
+	@Persist
+	private String urlCount;
 
 	void setupRender() throws MalformedURLException {
 
+
+
+	}
+
+	Object onSubmit() {
+		logger.info(">>> onSubmit");
+		
 		Integer urlCnt = 1000;
 		if (StringUtils.isNotEmpty(urlCount)) {
 			try {
@@ -78,16 +89,14 @@ public class Index {
 			}
 
 		}
-
-	}
-
-	Object onSubmit() {
-		logger.info("onSubmit");
+		
 		return this;
 	}
 
 	Object onDelete() {
-		logger.warn("onDelete");
+		logger.warn(">>> onDelete");
+		searchQuery = null;
+		urlCount = null;
 		pages = new ArrayList<SimpleURL>();
 		return this;
 	}
@@ -96,8 +105,6 @@ public class Index {
 	@Property
 	private List<SimpleURL> pages;
 
-	@Property
-	@Persist(PersistenceConstants.FLASH)
-	private String urlCount;
+
 
 }

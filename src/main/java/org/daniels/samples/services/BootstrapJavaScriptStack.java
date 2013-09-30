@@ -36,9 +36,11 @@ public class BootstrapJavaScriptStack implements JavaScriptStack {
         cssStack.add(new StylesheetLink(assetSource.getClasspathAsset("classpath:/META-INF/resources/webjars/bootstrap/2.2.1/css/bootstrap-responsive.min.css")));
 
         
-        //        cssStack.add(new StylesheetLink(assetSource.getContextAsset("styles/style.css", null)));
-//        cssStack.add(new StylesheetLink(assetSource.getContextAsset("styles/t5-override.css", null)));
-        
+//		cssStack.add(new StylesheetLink(assetSource.getContextAsset(
+//				"styles/style.css", null)));
+//		cssStack.add(new StylesheetLink(assetSource.getContextAsset(
+//				"styles/t5-override.css", null)));
+//        
         cssStack.add(new StylesheetLink(assetSource.getContextAsset("static/style.css", null)));
         cssStack.add(new StylesheetLink(assetSource.getContextAsset("static/hotel-booking.js", null)));
         

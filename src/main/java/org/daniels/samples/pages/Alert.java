@@ -48,7 +48,6 @@ public class Alert {
 		if (showDismiss == null) {
 			showDismiss = true;
 		}
-		alertManager.alert(Duration.TRANSIENT, Severity.INFO, "HAHAHAHAHA");
 	}
 
 	void onValidateFromForm() {
